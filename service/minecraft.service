@@ -1,0 +1,15 @@
+[Unit]
+Description=Minecraft Server For employed chuds
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=/server
+User=ec2-user
+ExecStart=/bin/bash /server/startup.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
